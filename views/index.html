@@ -26,7 +26,7 @@
         <!-- Sidebar -->
         <div id="sidebar-wrapper">
 
-            <ui-view>
+            <ui-view name="pokedexEntries">
                 <ul class="sidebar-nav">
                     <li class="sidebar-brand">
                         {{currentPokedex}}
@@ -34,9 +34,7 @@
                     <li ng-repeat="pokemon in pokedexEntries">
                         <a href="{{pokemon.pokemon_species.url}}">{{pokemon.pokemon_species.name}}</a>
                     </li>
- <!--               <li>
-                    <a href="#">Dashboard</a>
-                </li>-->
+
               </ui-view>
             </ul>
         </div>
@@ -60,13 +58,16 @@
                             </div>
                         </div>
 
+                        <h1>Pokemon Name</h1>
+                        <p>This is where the Pokemon's details will be</p>
+
                         <div ui-view="test">
 
+
+
+
+
                         </div>
-
-                            <h1>Pokemon Name</h1>
-                            <p>This is where the Pokemon's details will be</p>
-
 
                     </div>
                 </div>

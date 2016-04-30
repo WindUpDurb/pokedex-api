@@ -12,25 +12,25 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         })
         .state("kanto", {
             url: "/kanto",
-            templateUrl : "/html/home.html",
-            controller: "kantoController"
+            views : {
+                "pokedexEntries" : {
+                    templateUrl : "/html/home.html",
+                    controller: "kantoController"
+                }
+            }
+
         })
         .state("johto", {
             url : "/johto",
-            templateUrl : "/html/home.html",
-            controller: "johtoController"
-        })
-        .state("pokedexEntry", {
-            url : "/pokedexEntry",
             views: {
-                "" : {
+                "pokedexEntries" : {
+                    templateUrl : "/html/home.html",
                     controller: "johtoController"
                 },
-                "test" : {
-                    templateUrl : "/html/test.html",
-                }
+                "test" : {template : "got stuff in here"}
             }
         })
+
 
    $urlRouterProvider.otherwise("/");
 });

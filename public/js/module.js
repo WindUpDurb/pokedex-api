@@ -16,6 +16,9 @@ app.config(function ($stateProvider, $urlRouterProvider) {
                 "pokedexEntries" : {
                     templateUrl : "/html/home.html",
                     controller: "kantoController"
+                },
+                "pokeEntry" : {
+                    templateUrl : "/html/pokedexPokeEntryView.html"
                 }
             }
 
@@ -27,7 +30,21 @@ app.config(function ($stateProvider, $urlRouterProvider) {
                     templateUrl : "/html/home.html",
                     controller: "johtoController"
                 },
-                "test" : {template : "got stuff in here"}
+                "pokeEntry" : {
+                    templateUrl : "/html/pokedexPokeEntryView.html"
+                }
+            }
+        })
+        .state("pokemonEntry", {
+            url : "/pokemonEntry/:pokeIndex",
+            views : {
+                "" : {
+                    templateUrl : "/html/home.html",
+                },
+                "pokeEntry" : {
+                    templateUrl : "/html/pokeEntry.html",
+                    controller : "pokemonEntry"
+                }
             }
         })
 

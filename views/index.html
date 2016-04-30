@@ -32,7 +32,7 @@
                         {{currentPokedex}}
                     </li>
                     <li ng-repeat="pokemon in pokedexEntries">
-                        <a href="{{pokemon.pokemon_species.url}}">{{pokemon.pokemon_species.name}}</a>
+                        <a href="#/pokemonEntry/{{pokemon.pokemon_species.name}}">{{pokemon.pokemon_species.name}}</a>
                     </li>
 
               </ui-view>
@@ -58,16 +58,12 @@
                             </div>
                         </div>
 
-                        <h1>Pokemon Name</h1>
-                        <p>This is where the Pokemon's details will be</p>
-
-                        <div ui-view="test">
-
-
+                        <div ui-view="pokeEntry">
 
 
 
                         </div>
+
 
                     </div>
                 </div>

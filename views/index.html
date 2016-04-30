@@ -25,22 +25,19 @@
     <div id="wrapper">
         <!-- Sidebar -->
         <div id="sidebar-wrapper">
-            <ul class="sidebar-nav">
-                <li class="sidebar-brand">
-                    <a>
-                        <ui-view="currentPodedex">
-                            {{currentPokedex}}
-                        </ui-view>
-                    </a>
-                </li>
-                <ui-view>
+
+            <ui-view>
+                <ul class="sidebar-nav">
+                    <li class="sidebar-brand">
+                        {{currentPokedex}}
+                    </li>
                     <li ng-repeat="pokemon in pokedexEntries">
                         <a href="{{pokemon.pokemon_species.url}}">{{pokemon.pokemon_species.name}}</a>
                     </li>
  <!--               <li>
                     <a href="#">Dashboard</a>
                 </li>-->
-                </ui-view>
+              </ui-view>
             </ul>
         </div>
         <!-- /#sidebar-wrapper -->
@@ -57,16 +54,19 @@
                                 <div class="navbar-header">
 
                                     <a class="navbar-brand" ui-sref="kanto">Kanto</a>
+                                    <a class="navbar-brand" ui-sref="johto">Johto</a>
                                 </div>
 
                             </div>
                         </div>
 
+                        <div ui-view="test">
 
-                        <ui-view>
+                        </div>
+
                             <h1>Pokemon Name</h1>
                             <p>This is where the Pokemon's details will be</p>
-                        </ui-view>
+
 
                     </div>
                 </div>

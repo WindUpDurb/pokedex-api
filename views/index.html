@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PokeDex</title>
+    <script src="/bower_components/angular/angular.min.js"></script>
+    <script src="/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/icon?family=Material+Icons">
+
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/bower_components/bootstrap-material-design/dist/css/bootstrap-material-design.min.css">
+    <link rel="stylesheet" href="/bower_components/bootstrap-material-design/dist/css/ripples.min.css">
+    <link rel="stylesheet" href="/simple-sidebar.css">
+
+    <script src="/js/module.js"></script>
+    <script src="/js/services.js"></script>
+    <script src="/js/controllers.js"></script>
+
+</head>
+<body ng-app="pokedexApp">
+    <h1>Pokedex</h1>
+
+    <div id="wrapper">
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a>
+                        <ui-view="currentPodedex">
+                            {{currentPokedex}}
+                        </ui-view>
+                    </a>
+                </li>
+                <ui-view>
+                    <li ng-repeat="pokemon in pokedexEntries">
+                        <a href="{{pokemon.pokemon_species.url}}">{{pokemon.pokemon_species.name}}</a>
+                    </li>
+ <!--               <li>
+                    <a href="#">Dashboard</a>
+                </li>-->
+                </ui-view>
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+
+                        <!--Navbar-->
+                        <div class="navbar navbar-inverse">
+                            <div class="container-fluid">
+                                <div class="navbar-header">
+
+                                    <a class="navbar-brand" ui-sref="kanto">Kanto</a>
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                        <ui-view>
+                            <h1>Pokemon Name</h1>
+                            <p>This is where the Pokemon's details will be</p>
+                        </ui-view>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -- Keep Above -->
+
+    </div>
+    <!-- /#wrapper -->
+
+</body>
+</html>
